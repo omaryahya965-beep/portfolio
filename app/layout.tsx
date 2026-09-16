@@ -21,8 +21,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Omar Yahya - Portfolio",
-  description: "Computer Engineering Student | Web Developer | AI Enthusiast",
-  generator: "v0.app",
+  description: "Computer Engineering Student | Full-Stack Developer | Birzeit University",
 }
 
 export default function RootLayout({

@@ -67,18 +67,41 @@ export function ContactForm() {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" name="name" required />
+            <Label htmlFor="name" className="text-base font-semibold text-foreground">
+              Name
+            </Label>
+            <Input
+              id="name"
+              name="name"
+              required
+              className="h-11 border-2 border-slate-300 dark:border-slate-600 bg-background focus-visible:border-primary"
+            />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" required />
+            <Label htmlFor="email" className="text-base font-semibold text-foreground">
+              Email
+            </Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              required
+              className="h-11 border-2 border-slate-300 dark:border-slate-600 bg-background focus-visible:border-primary"
+            />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" rows={5} required />
+            <Label htmlFor="message" className="text-base font-semibold text-foreground">
+              Message
+            </Label>
+            <Textarea
+              id="message"
+              name="message"
+              rows={5}
+              required
+              className="border-2 border-slate-300 dark:border-slate-600 bg-background focus-visible:border-primary"
+            />
           </div>
 
           <Button

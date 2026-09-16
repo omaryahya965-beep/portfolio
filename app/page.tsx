@@ -6,7 +6,19 @@ import { Badge } from "@/components/ui/badge"
 import { Navbar } from "@/components/navbar"
 import { TypingAnimation } from "@/components/typing-animation"
 import { ContactForm } from "@/components/contact-form"
-import { Github, Linkedin, Instagram, Facebook, Code, Smartphone, Brain, Mail, MapPin, Phone } from "lucide-react"
+import {
+  Github,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Code,
+  Smartphone,
+  Brain,
+  Mail,
+  MapPin,
+  ExternalLink,
+  Server,
+} from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -15,11 +27,11 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16">
+      <section id="home" className="min-h-[100dvh] flex items-center justify-center px-4 pt-16">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Hero Text */}
-            <div className="space-y-6 animate-fade-in-up">
+            <div className="order-2 lg:order-1 space-y-6 animate-fade-in-up text-center lg:text-left">
               <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
                 Hello, It's Me
                 <br />
@@ -29,20 +41,22 @@ export default function HomePage() {
               <div className="text-xl md:text-2xl text-muted-foreground">
                 I'm a{" "}
                 <TypingAnimation
-                  texts={["Web Developer", "AI Enthusiast", "Problem Solver", "Computer Engineering Student"]}
+                  texts={["Full-Stack Developer", "Computer Engineering Student", "Problem Solver"]}
                   className="text-secondary font-semibold"
                 />
               </div>
 
-              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-                Computer engineering student at Birzeit University with a passion for learning and developing new
-                technologies.
+              <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                A Computer Engineering student at Birzeit University, currently in my fourth year, with solid
+                experience in full-stack web development, backend systems, and digital systems design. I am
+                dedicated to engineering practical, high-quality solutions and continuously advancing my technical
+                expertise.
               </p>
 
               {/* Social Links */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center lg:justify-start">
                 <a
-                  href="https://github.com/OmarYahya2"
+                  href="https://github.com/omaryahya965-beep"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
@@ -85,15 +99,15 @@ export default function HomePage() {
             </div>
 
             {/* Hero Image */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="order-1 lg:order-2 flex justify-center">
               <div className="relative">
-                <div className="w-80 h-80 rounded-2xl overflow-hidden border-4 border-primary shadow-2xl animate-float">
+                <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-4 border-primary shadow-2xl animate-float">
                   <Image
-                    src="/images/omar-profile.jpg"
+                    src="/images/omar-profile.png"
                     alt="Omar Yahya - Computer Engineering Student"
-                    width={320}
-                    height={320}
-                    className="w-full h-full object-cover object-top"
+                    width={384}
+                    height={384}
+                    className="w-full h-full object-cover object-center"
                     priority
                   />
                 </div>
@@ -114,20 +128,41 @@ export default function HomePage() {
             <div className="w-20 h-1 bg-primary mx-auto"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* About Text */}
-            <Card className="shadow-lg border-0">
-              <CardContent className="p-8">
+            <Card className="shadow-lg border-0 h-full bg-background">
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold text-secondary text-center">Who I Am</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  I'm a computer engineering student at Birzeit University with a passion for learning and developing
-                  new technologies. I have experience with HTML, CSS, and Java, and I'm constantly expanding my
-                  knowledge in the field of programming and software development.
+                  I am a Computer Engineering student at Birzeit University, currently in my fourth year, with solid
+                  experience in full-stack web development, backend systems, and digital systems design. I have
+                  independently designed, built, and deployed production-ready applications from the ground up —
+                  spanning responsive user interfaces, database architecture, and secure authentication — and I
+                  remain committed to continuously expanding my technical expertise through hands-on, real-world
+                  projects.
                 </p>
 
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-foreground">Skills</h3>
                   <div className="flex flex-wrap gap-3">
-                    {["HTML", "CSS", "Java", "Web Development", "Problem Solving"].map((skill) => (
+                    {[
+                      "HTML",
+                      "CSS",
+                      "JavaScript",
+                      "React",
+                      "Next.js",
+                      "Node.js",
+                      "Express.js",
+                      "Django",
+                      "REST APIs",
+                      "PostgreSQL",
+                      "Supabase",
+                      "Verilog HDL",
+                      "C",
+                      "Java",
+                    ].map((skill) => (
                       <Badge
                         key={skill}
                         variant="secondary"
@@ -142,16 +177,16 @@ export default function HomePage() {
             </Card>
 
             {/* Interests */}
-            <Card className="shadow-lg border-0">
+            <Card className="shadow-lg border-0 h-full flex flex-col bg-background">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-secondary text-center">Interests</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex-1 flex flex-col justify-center">
                 {[
-                  { icon: Code, text: "Web Development" },
-                  { icon: Code, text: "Software Engineering" },
-                  { icon: Brain, text: "Artificial Intelligence" },
-                  { icon: Smartphone, text: "Mobile App Development" },
+                  { icon: Code, text: "Full-Stack Web Development" },
+                  { icon: Server, text: "Backend & Database Design" },
+                  { icon: Brain, text: "Digital Systems & Hardware Design" },
+                  { icon: Smartphone, text: "Application Deployment" },
                 ].map((interest, index) => (
                   <div
                     key={index}
@@ -184,20 +219,20 @@ export default function HomePage() {
             {[
               {
                 icon: Code,
-                title: "Web Development",
-                description: "Creating responsive and modern websites using the latest technologies.",
+                title: "Frontend Development",
+                description: "Building responsive, modern interfaces with React, Next.js, and JavaScript.",
                 color: "bg-chart-1",
               },
               {
-                icon: Smartphone,
-                title: "Mobile Apps",
-                description: "Developing cross-platform mobile applications with modern frameworks.",
+                icon: Server,
+                title: "Backend Development",
+                description: "Designing REST APIs and server-side logic with Node.js, Express.js, and Django.",
                 color: "bg-chart-2",
               },
               {
                 icon: Brain,
-                title: "AI Solutions",
-                description: "Implementing intelligent solutions using machine learning algorithms.",
+                title: "Database & Deployment",
+                description: "Architecting and deploying full systems with PostgreSQL and Supabase.",
                 color: "bg-chart-3",
               },
             ].map((service, index) => (
@@ -222,8 +257,94 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section id="projects" className="py-20 px-4 bg-card">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Projects</h2>
+            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A look at what I've built while learning and applying new technologies
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "School Management System",
+                description:
+                  "A full-stack, bilingual (Arabic/English) platform built for a real school — a public site for browsing grades, schedules, and study materials, plus role-based dashboards for admins and teachers to manage classes, grades, attendance, and files. Includes JWT authentication, QR-code access, and an admin analytics dashboard.",
+                tags: ["Next.js", "React", "TypeScript", "Express.js", "Prisma", "PostgreSQL"],
+                github: "https://github.com/omaryahya965-beep/School_Test",
+                demo: "https://kafraqab-school.vercel.app",
+                demoLabel: "Live Demo",
+              },
+              {
+                title: "Internal Audit Recommendations Tracker",
+                description:
+                  "A full-stack, Arabic-first (RTL) platform for tracking the implementation of internal audit recommendations across local government units. Models a complete workflow — from audit reporting through department response, council ratification, action plans, and final verification — with a pluggable AI similarity engine to flag recurring recommendations.",
+                tags: ["Next.js", "TypeScript", "Django", "DRF", "PostgreSQL", "JWT"],
+                github: "https://github.com/omaryahya965-beep/Recommendation",
+                demo: "https://recommendation-frontend-theta.vercel.app",
+                demoLabel: "Live Demo",
+              },
+              {
+                title: "Portfolio — First Edition",
+                description:
+                  "My first personal portfolio website, marking the starting point of my web development journey and the foundation that led to my current, more advanced work.",
+                tags: ["HTML", "CSS"],
+                github: "https://github.com/OmarYahya2/FirstProject",
+                demo: "https://omaryahya2.github.io/FirstProject",
+                demoLabel: "Live Site",
+              },
+            ].map((project) => (
+              <Card
+                key={project.title}
+                className="shadow-lg border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col bg-background"
+              >
+                <CardHeader>
+                  <CardTitle className="text-xl font-semibold text-foreground">{project.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col flex-1 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed flex-1">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-4 pt-2">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                    >
+                      <Github size={18} />
+                      Source Code
+                    </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                      >
+                        {project.demoLabel}
+                        <ExternalLink size={14} />
+                      </a>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-card">
+      <section id="contact" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Get in Touch</h2>
@@ -246,11 +367,12 @@ export default function HomePage() {
                 OmarYahya<span className="text-primary">.</span>
               </h3>
               <p className="text-background/80 mb-6 max-w-md">
-                Computer engineering student passionate about web development and AI technologies.
+                Computer Engineering student at Birzeit University, dedicated to full-stack web development and
+                building well-engineered, production-ready software.
               </p>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/OmarYahya2"
+                  href="https://github.com/omaryahya965-beep"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background hover:bg-primary hover:text-primary-foreground transition-all duration-300"
@@ -313,6 +435,14 @@ export default function HomePage() {
                 </li>
                 <li>
                   <button
+                    onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                    className="hover:text-primary transition-colors"
+                  >
+                    Projects
+                  </button>
+                </li>
+                <li>
+                  <button
                     onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                     className="hover:text-primary transition-colors"
                   >
@@ -327,22 +457,18 @@ export default function HomePage() {
               <ul className="space-y-2 text-background/80">
                 <li className="flex items-center gap-2">
                   <Mail size={16} />
-                  <span>omar@example.com</span>
+                  <span>omar.yahya965@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <MapPin size={16} />
-                  <span>Birzeit University</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Phone size={16} />
-                  <span>+970 XXX XXXX</span>
+                  <span>Ramallah, Palestine</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-background/20 mt-8 pt-8 text-center text-background/60">
-            <p>&copy; 2025 Omar Yahya. All rights reserved.</p>
+            <p>&copy; 2026 Omar Yahya. All rights reserved.</p>
           </div>
         </div>
       </footer>

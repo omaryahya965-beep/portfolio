@@ -34,7 +34,7 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <a href="#home" className="font-serif font-bold text-2xl text-primary">
-            OmarYahya<span className="text-secondary">.</span>
+            OmarYahya
           </a>
 
           {/* Desktop Navigation */}
@@ -56,6 +56,12 @@ export function Navbar() {
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Services
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -99,6 +105,12 @@ export function Navbar() {
                 className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
               >
                 Services
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+              >
+                Projects
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
