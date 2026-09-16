@@ -21,15 +21,8 @@ Personal portfolio website of Omar Yahya, a Computer Engineering student at Birz
 ```bash
 cd frontend
 npm install
-cp .env.example .env.local   # then set NEXT_PUBLIC_API_URL if not using the default
 npm run dev                  # http://localhost:3000
 ```
-
-### Environment variables (`frontend/.env.local`)
-
-| Variable              | Description                                             | Default                  |
-| --------------------- | -------------------------------------------------------- | ------------------------ |
-| `NEXT_PUBLIC_API_URL` | Base URL of the backend API (no trailing slash)          | `http://127.0.0.1:8000`  |
 
 ### Tech stack
 
@@ -44,19 +37,11 @@ cd backend
 python -m venv venv
 venv\Scripts\activate        # Windows (use `source venv/bin/activate` on macOS/Linux)
 pip install -r requirements.txt
-cp .env.example .env         # then fill in DATABASE_URL, SECRET_KEY, etc.
 python manage.py migrate
 python manage.py runserver   # http://127.0.0.1:8000
 ```
 
-### Environment variables (`backend/.env`)
-
-| Variable       | Description                                                              |
-| -------------- | ------------------------------------------------------------------------- |
-| `DATABASE_URL` | PostgreSQL connection string (e.g. from [Neon](https://neon.tech)). Falls back to local SQLite if unset. |
-| `SECRET_KEY`   | Django secret key. Must be unique and secret in production.               |
-| `DEBUG`        | `True` for local development, `False` in production.                      |
-| `ALLOWED_HOSTS`| Comma-separated list of allowed hostnames in production.                  |
+The database is [Neon](https://neon.tech) (serverless PostgreSQL), with a local SQLite fallback for development.
 
 ### API
 
@@ -71,5 +56,4 @@ Django, Django REST Framework, PostgreSQL (via `dj-database-url` + `psycopg2`), 
 
 ## Notes
 
-- `backend/db.sqlite3` and both `.env` files are intentionally excluded from version control (see `.gitignore`) — they contain local/secret data and must never be committed.
 - CORS on the backend is currently open for local development; restrict `CORS_ALLOWED_ORIGINS` before deploying to production.
