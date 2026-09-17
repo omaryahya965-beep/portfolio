@@ -2,7 +2,7 @@
 
 Personal portfolio website of Omar Yahya, a Computer Engineering student at Birzeit University. This is a monorepo containing both the public-facing site and its contact-form API.
 
-- **Live site:** https://omar-yahya.vercel.app
+- **Live site:** https://omaryahya.vercel.app
 - **Frontend:** [`frontend/`](frontend) — Next.js (App Router) + TypeScript + Tailwind CSS
 - **Backend:** [`backend/`](backend) — Django + Django REST Framework, PostgreSQL (Neon)
 
